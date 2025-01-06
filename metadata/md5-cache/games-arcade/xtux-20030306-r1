@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile configure install prepare
+DEPEND=x11-libs/libXpm
+DESCRIPTION=Multiplayer Gauntlet-style arcade game
+EAPI=7
+HOMEPAGE=https://xtux.sourceforge.net/
+INHERIT=desktop flag-o-matic toolchain-funcs
+KEYWORDS=~amd64 ~x86
+LICENSE=GPL-2
+RDEPEND=x11-libs/libXpm media-fonts/font-adobe-75dpi
+SLOT=0
+SRC_URI=https://downloads.sourceforge.net/xtux/xtux-src-20030306.tar.gz
+_eclasses_=desktop	3a72ffe0d8e1dd73af3a1c8c15a59fed	flag-o-matic	f14aba975c94ccaa9f357a27e3b17ffe	multilib	b2a329026f2e404e9e371097dda47f96	toolchain-funcs	14648d8795f7779e11e1bc7cf08b7536
+_md5_=a801abb7fd4b00c3b5888733473ff455

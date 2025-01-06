@@ -1,0 +1,16 @@
+BDEPEND=python_single_target_python3_10? ( dev-lang/python:3.10 ) python_single_target_python3_11? ( dev-lang/python:3.11 ) python_single_target_python3_12? ( dev-lang/python:3.12 ) net-irc/znc:=[ssl] python_single_target_python3_10? ( dev-python/pytest[python_targets_python3_10(-)] dev-python/pytest-asyncio[python_targets_python3_10(-)] dev-python/semantic-version[python_targets_python3_10(-)] ) python_single_target_python3_11? ( dev-python/pytest[python_targets_python3_11(-)] dev-python/pytest-asyncio[python_targets_python3_11(-)] dev-python/semantic-version[python_targets_python3_11(-)] ) python_single_target_python3_12? ( dev-python/pytest[python_targets_python3_12(-)] dev-python/pytest-asyncio[python_targets_python3_12(-)] dev-python/semantic-version[python_targets_python3_12(-)] )
+DEFINED_PHASES=compile install setup test
+DESCRIPTION=A ZNC module which provides push notifications to Palaver
+EAPI=8
+HOMEPAGE=https://github.com/cocodelabs/znc-palaver
+INHERIT=python-single-r1 toolchain-funcs
+IUSE=python_single_target_python3_10 python_single_target_python3_11 python_single_target_python3_12
+KEYWORDS=amd64 x86
+LICENSE=MIT
+RDEPEND=python_single_target_python3_10? ( dev-lang/python:3.10 ) python_single_target_python3_11? ( dev-lang/python:3.11 ) python_single_target_python3_12? ( dev-lang/python:3.12 ) net-irc/znc:=[ssl]
+REQUIRED_USE=^^ ( python_single_target_python3_10 python_single_target_python3_11 python_single_target_python3_12 )
+RESTRICT=test
+SLOT=0
+SRC_URI=https://github.com/cocodelabs/znc-palaver/archive/1.2.2.tar.gz -> znc-palaver-1.2.2.tar.gz
+_eclasses_=multilib	b2a329026f2e404e9e371097dda47f96	multiprocessing	1e32df7deee68372153dca65f4a7c21f	python-single-r1	47d8ac9be330c9366112b78fd4f8ce57	python-utils-r1	42c5abe4a656a4993a06a4fc61dbdd12	toolchain-funcs	14648d8795f7779e11e1bc7cf08b7536
+_md5_=2f70bea884ae5f937e14df127f1d6524

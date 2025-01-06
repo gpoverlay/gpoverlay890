@@ -1,0 +1,625 @@
+# Copyright 1999-2025 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
+####################################################################
+#
+# When you add an entry to the top of this file, add your name, the date
+# in the UTC timezone with a format of YYYY-MM-DD, and an explanation of why
+# something is getting masked.
+# Please be extremely careful not to commit atoms that are not valid, as it can
+# cause large-scale breakage, especially if it ends up in the daily snapshot.
+#
+## Example:
+##
+## # Dev E. Loper <developer@gentoo.org> (2019-07-01)
+## # Masking  these versions until we can get the
+## # v4l stuff to work properly again
+## =media-video/mplayer-0.90_pre5
+## =media-video/mplayer-0.90_pre5-r1
+#
+# - Best last rites (removal) practices -
+# Include the following info:
+# a) reason for masking
+# b) bug # for the removal (and yes you should have one)
+# c) date of removal (either the date or "in x days")
+#
+## Example:
+##
+## # Dev E. Loper <developer@gentoo.org> (2019-07-01)
+## # Masked for removal in 30 days.  Doesn't work
+## # with new libfoo. Upstream dead, gtk-1, smells
+## # funny. (bug #987654)
+## app-misc/some-package
+
+#--- END OF EXAMPLES ---
+
+# Sam James <sam@gentoo.org> (2025-01-05)
+# Removed upstream in gstreamer-1.24. See bug #947522. Removal on 2025-02-05.
+media-plugins/gst-plugins-kate
+
+# Paul Zander <negril.nx+gentoo@gmail.com> (2025-01-05)
+# Masked for testing
+>=dev-build/rocm-cmake-6.3.0
+>=dev-libs/hipother-6.3.0
+>=dev-libs/rccl-6.3.0
+>=dev-libs/rocdbgapi-6.3.0
+>=dev-libs/rocm-comgr-6.3.0
+>=dev-libs/rocm-device-libs-6.3.0
+>=dev-libs/rocm-opencl-runtime-6.3.0
+>=dev-libs/rocr-runtime-6.3.0
+>=dev-libs/roct-thunk-interface-6.3.0
+>=dev-util/hip-6.3.0
+>=dev-util/hipcc-6.3.0
+>=dev-util/hipify-clang-6.3.0
+>=dev-util/rocm_bandwidth_test-6.3.0
+>=dev-util/rocm-smi-6.3.0
+>=dev-util/rocminfo-6.3.0
+>=dev-util/roctracer-6.3.0
+>=dev-util/Tensile-6.3.0
+>=sci-libs/composable-kernel-6.3.0
+>=sci-libs/hipBLAS-common-6.3.0
+>=sci-libs/hipBLAS-6.3.0
+>=sci-libs/hipBLASLt-6.3.0
+>=sci-libs/hipCUB-6.3.0
+>=sci-libs/hipFFT-6.3.0
+>=sci-libs/hipRAND-6.3.0
+>=sci-libs/hipSOLVER-6.3.0
+>=sci-libs/hipSPARSE-6.3.0
+>=sci-libs/miopen-6.3.0
+>=sci-libs/rocBLAS-6.3.0
+>=sci-libs/rocFFT-6.3.0
+>=sci-libs/rocPRIM-6.3.0
+>=sci-libs/rocRAND-6.3.0
+>=sci-libs/rocSOLVER-6.3.0
+>=sci-libs/rocSPARSE-6.3.0
+>=sci-libs/rocThrust-6.3.0
+>=sci-libs/rocWMMA-6.3.0
+>=sci-libs/rpp-6.3.0
+
+# Nowa Ammerlaan <nowa@gentoo.org> (2025-01-03)
+# Contains a serious bug that can cause deletion of the users home dir.
+# See-also: https://github.com/keshavbhatt/whatsie/issues/230
+# Removal on 2025-03-03 unless upstream fixes the issue
+net-im/whatsie
+
+# Maciej Barć <xgqt@gentoo.org> (2025-01-02)
+# Deprecated LEAN 3 packages. The "mathlib-tools" repo is archived
+# (https://github.com/leanprover-community/mathlib-tools). Migrate to LEAN 4.
+# Removal on 2025-02-02
+sci-mathematics/lean:0/3
+sci-mathematics/mathlib-tools
+
+# Maciej Barć <xgqt@gentoo.org> (2025-01-02)
+# Upstream dead, repo archived (https://github.com/mono/xsp). Uses deprecated
+# "dotnet" eclass. Depends on old mono. As a replacement one can use official
+# .NET 6.0-9.0 ASP.NET instead.
+# Removal on 2025-02-02
+acct-group/aspnet
+acct-user/aspnet
+www-servers/xsp
+
+# Andreas Sturmlechner <asturm@gentoo.org> (2024-01-02)
+# No more revdeps, depends on Qt5. Removal on 2025-01-29.
+dev-libs/libqt5pas
+
+# Andreas Sturmlechner <asturm@gentoo.org> (2025-01-01)
+# Transitional package without any revdeps left.
+# Removal on 2025-01-31
+kde-apps/konsolepart
+
+# Nowa Ammerlaan <nowa@gentoo.org> (2025-01-01)
+# Broken with Qt6 and in wayland sessions. Archived upstream. Has been on life
+# support for several years already.
+# Removal on 2025-02-01
+media-video/vidify
+media-video/vidify-audiosync
+net-misc/lyricwikia
+
+# Sam James <sam@gentoo.org> (2024-12-31)
+# Many open bugs and requires a large amount of patching to build correctly
+# as a shared library. Breaks reverse dependencies in a few ways.
+# Removal on 2025-01-30. bug #924174 and friends.
+dev-libs/dmalloc
+
+# Michał Górny <mgorny@gentoo.org> (2024-12-29)
+# As of 3.1.0, upstream has removed all mocking and made it impossible
+# to test the package locally.  As such, we cannot maintain it going
+# forward.  Removal on 2025-01-28.  Bug #947144.
+dev-python/pslab
+
+# Andreas Sturmlechner <asturm@gentoo.org> (2024-12-28)
+# Cleanup transitional Bitcoin Core meta packages, as well as
+# unmaintainable net-p2p/bitcoin-core[system-leveldb] and
+# virtual/bitcoin-leveldb. Removal on 2025-01-27. Bug #945359
+dev-util/bitcoin-tx
+net-libs/libbitcoinconsensus
+net-p2p/bitcoin-cli
+net-p2p/bitcoin-qt
+net-p2p/bitcoind
+virtual/bitcoin-leveldb
+
+# Mats Lidell <matsl@gentoo.org> (2024-12-25)
+# Packages used by XEmacs 21.4, now removed from tree.  Not needed with
+# XEmacs 21.5.  Removal on 2025-01-24.
+app-xemacs/latin-unity
+app-xemacs/mule-ucs
+
+# Andreas Sturmlechner <asturm@gentoo.org> (2024-12-14)
+# Last "release" seems to have been an AUR special, and even that is now
+# >6 years old and still KF5 based. No known repository, no tarball source
+# except AUR. Removal on 2025-01-13.
+app-crypt/kencfs-plasma
+
+# Andreas Sturmlechner <asturm@gentoo.org> (2024-12-14)
+# Archived and unmaintained upstream; see also:
+# https://invent.kde.org/libraries/atcore/-/issues/2
+# Library without revdeps. Removal on 2025-01-13.
+dev-libs/atcore
+
+# Ulrich Müller <ulm@gentoo.org> (2024-12-13)
+# Unmaintained upstream: last release (2.40) in 2009, last commit
+# to upstream repository in 2017. Broken with Emacs 29.
+# Removal on 2025-01-12. Bug #911288.
+app-emacs/ecb
+
+# Andreas Sturmlechner <asturm@gentoo.org> (2024-12-11)
+# Build system needs someone really dedicated to put up with it.
+# Version completely outdated, way too many bugs to list here.
+# Removal on 2025-01-10
+dev-db/firebird
+
+# Andreas Sturmlechner <asturm@gentoo.org> (2024-12-11)
+# Declared unmaintained by upstream, will be broken by akonadi-24.12.
+# Use app-text/marknote https://apps.kde.org/marknote/ as alternative,
+# importing existing notes is possible. Removal on 2025-01-10.
+app-text/kjots
+kde-apps/knotes
+
+# Andreas Sturmlechner <asturm@gentoo.org> (2024-12-10)
+# KF5 Porting Aids removal; bugs 755956, 759778
+# Removal on 2025-01-09
+media-sound/soundkonverter
+kde-frameworks/countryflags
+kde-frameworks/kdelibs4support
+kde-frameworks/kemoticons
+
+# Michał Górny <mgorny@gentoo.org> (2024-12-05)
+# 6.12.2 does not boot for me.
+=sys-kernel/gentoo-kernel-6.12.2
+=sys-kernel/gentoo-kernel-bin-6.12.2
+=sys-kernel/vanilla-kernel-6.12.2
+=virtual/dist-kernel-6.12.2
+
+# Volkmar W. Pogatzki <gentoo@pogatzki.net> (2024-12-04)
+# Bugs #845294 #757543 #517744 #704198 #366739 #350302 #614318 #637422
+# #738898 #501586.
+# Blocks removal of dev-java/swt-3.7.2-r4, bug #944885.
+# Users should switch to dev-util/android-sdk-cmdline-tools for a CLI replacement
+# or dev-util/android-studio for a GUI replacement.
+# Removal on 2025-01-04
+dev-util/android-sdk-update-manager
+dev-java/swt:3.7
+
+# Andreas Sturmlechner <asturm@gentoo.org> (2024-11-28)
+# Grave data loss bug. See also:
+# https://github.com/nicotine-plus/nicotine-plus/issues/3152
+=net-p2p/nicotine+-3.3.5
+
+# Ionen Wolkens <ionen@gentoo.org> (2024-11-19)
+# NVIDIA dropped support for the 470.xx branch in September 2024[1].
+#
+# Users are free to unmask and keep using, but be warned it is very
+# likely to be affected by security issues[2] as NVIDIA does not
+# track nor fix these for this branch anymore.
+#
+# Gentoo will keep it packaged for as long as reasonably possible
+# (albeit masked) but no true support will be given nor patches
+# for newer kernels. It is recommended to use 6.6.x LTS kernels or
+# older (6.6.x will be supported upstream until December 2026,
+# and 6.1.x a year further to December 2027).
+#
+# Major issues will lead to removal without further warning, e.g.
+# if no usable kernels left in tree, or if broken with a newer Xorg.
+#
+# >> It is recommended to switch to nouveau[3] drivers (regardless
+#    of its worse performance), or ideally replace the hardware.
+#
+# [1] https://nvidia.custhelp.com/app/answers/detail/a_id/3142
+#     https://nvidia.custhelp.com/app/answers/detail/a_id/5202
+# [2] https://bugs.gentoo.org/942031#c7
+# [3] https://wiki.gentoo.org/wiki/Nouveau
+x11-drivers/nvidia-drivers:0/470
+
+# Michael Orlitzky <mjo@gentoo.org> (2024-11-13)
+# PHP 8.1.x no longer receives bug fixes unless they address security
+# issues. That means no build fixes, no updates for modern compilers,
+# and no tweaks for newer versions of dependencies. We can't really
+# afford to maintain our own little fork of this, so it's time to
+# upgrade (sorry). With it goes any unmaintained PECL packages
+# that don't support 8.2 or newer.
+dev-lang/php:8.1
+dev-php/pecl-dbase
+dev-php/pecl-gnupg
+dev-php/pecl-lzf
+dev-php/pecl-mcrypt
+dev-php/pecl-memcache
+dev-php/pecl-oauth
+dev-php/pecl-pam
+dev-php/pecl-ps
+dev-php/pecl-psr
+dev-php/pecl-timezonedb
+dev-php/pecl-translit
+dev-php/pecl-zmq
+dev-php/realpath_turbo
+dev-php/snuffleupagus
+dev-php/swoole
+=virtual/httpd-php-8.1
+<www-apps/icingaweb2-2.12.1-r1
+
+# Matt Jolly <kangie@gentoo.org> (2024-11-09)
+# The legacy Rust ebuilds are no longer maintained and have been
+# replaced by the new slotted Rust. Removal in 30 days.
+=dev-lang/rust-1.71.1
+=dev-lang/rust-1.74.1
+=dev-lang/rust-1.75.0-r1
+=dev-lang/rust-1.77.1
+=dev-lang/rust-1.79.0
+=dev-lang/rust-1.80.1
+=dev-lang/rust-1.81.0
+=dev-lang/rust-1.82.0
+=dev-lang/rust-bin-1.71.1
+=dev-lang/rust-bin-1.74.1
+=dev-lang/rust-bin-1.75.0
+=dev-lang/rust-bin-1.77.1
+=dev-lang/rust-bin-1.79.0
+=dev-lang/rust-bin-1.80.1
+=dev-lang/rust-bin-1.81.0
+=dev-lang/rust-bin-1.82.0
+=virtual/rust-1.71.1-r2
+=virtual/rust-1.74.1-r1
+=virtual/rust-1.75.0-r1
+=virtual/rust-1.77.1
+=virtual/rust-1.79.0
+=virtual/rust-1.80.1
+=virtual/rust-1.81.0-r1
+=virtual/rust-1.82.0
+
+# Matt Jolly <kangie@gentoo.org> (2024-11-09)
+# Does not build with any rust version in the tree. Removal in 30 days.
+=dev-lang/starlark-rust-0.8.0
+
+# Matt Jolly <kangie@gentoo.org> (2024-11-09)
+# Does not build with any rust version in the tree. Removal in 30 days.
+=dev-util/wasmer-0.11.0
+
+# Viorel Munteanu <ceamac@gentoo.org> (2024-10-18)
+# Experimental version, for testing purposes only.
+# Bug #941566.
+app-emulation/virtualbox-kvm
+
+# Nowa Ammerlaan <nowa@gentoo.org> (2024-10-05)
+# This version is known to break on certain systems. At the
+# same time it fixes several reported issues. Masked until
+# we can work out how to resolve the situation.
+# See also: https://github.com/gentoo/gentoo/pull/36091
+~sys-boot/plymouth-24.004.60
+
+# Sam James <sam@gentoo.org> (2024-09-30)
+# GCC 10 and older no longer receive upstream support or fixes for
+# bugs. Please switch to a newer GCC version using gcc-config.
+# The lowest supported version of GCC is GCC 11.
+<sys-devel/gcc-11
+<sys-devel/kgcc64-11
+
+# Robin H. Johnson <robbat2@gentoo.org> (2024-09-22)
+# Upstream testing release; fails some tests as well here
+# Beware that if you upgrade to it, you may need to reset your keyrings.
+>=app-crypt/gnupg-2.5
+
+# Ulrich Müller <ulm@gentoo.org> (2024-09-12)
+# Pretest versions, masked for testing.
+<app-editors/emacs-30.0.9999:30-vcs
+
+# Sam James <sam@gentoo.org> (2024-09-10)
+# Breaks libstdc++ with a casing issue: https://gcc.gnu.org/PR116657
+=sys-libs/timezone-data-2024b
+
+# Fabian Groffen <grobian@gentoo.org> (2024-09-02)
+# exim_tinydb utility crashes due to invalid free() (used in startup script)
+=mail-mta/exim-4.98
+
+# Leonardo Hernández Hernández <leohdz172@proton.me> (2024-07-07)
+# New major ffmpeg version. Tracker bug #928905.
+>=media-video/ffmpeg-7.0
+
+# Sam James <sam@gentoo.org> (2024-06-25)
+# The symbol versioning "fix" breaks anything built with 3.0.0.
+=dev-libs/libassuan-3.0.1
+
+# Alfredo Tupone <tupone@gentoo.org> (2024-06-09)
+# Not ready for testing
+>=dev-lang/ocaml-5
+dev-ml/sexplib0:0/0.17
+dev-ml/ocaml_intrinsics:0/0.17
+dev-ml/ocaml_intrinsics_kernel:0/0.17
+dev-ml/base:0/0.17
+dev-ml/fieldslib:0/0.17
+dev-ml/stdio:0/0.17
+>=dev-ml/ocaml-compiler-libs-0.17
+>=dev-ml/ppxlib-0.32.1
+dev-ml/ppx_cold:0/0.17
+dev-ml/ppxlib_jane
+dev-ml/ppx_compare:0/0.17
+dev-ml/ppx_enumerate:0/0.17
+dev-ml/ppx_globalize:0/0.17
+dev-ml/ppx_sexp_conv:0/0.17
+dev-ml/ppx_hash:0/0.17
+dev-ml/ppx_base:0/0.17
+dev-ml/ppx_fields_conv:0/0.17
+dev-ml/ppx_fixed_literal:0/0.17
+dev-ml/ppx_here:0/0.17
+dev-ml/ppx_let:0/0.17
+dev-ml/ppx_sexp_message:0/0.17
+dev-ml/ppx_sexp_value:0/0.17
+dev-ml/ppx_assert:0/0.17
+dev-ml/jane-street-headers:0/0.17
+dev-ml/ppx_optcomp:0/0.17
+dev-ml/jst-config:0/0.17
+dev-ml/time_now:0/0.17
+dev-ml/ppx_inline_test:0/0.17
+dev-ml/ppx_bench:0/0.17
+dev-ml/splittable_random:0/0.17
+dev-ml/base_quickcheck:0/0.17
+dev-ml/ppx_stable:0/0.17
+dev-ml/ppx_string:0/0.17
+dev-ml/ppx_expect:0/0.17
+dev-ml/parsexp:0/0.17
+dev-ml/sexplib:0/0.17
+dev-ml/variantslib:0/0.17
+dev-ml/ppx_variants_conv:0/0.17
+dev-ml/ppx_log:0/0.17
+dev-ml/ppx_ignore_instrumentation:0/0.17
+dev-ml/typerep:0/0.17
+dev-ml/ppx_typerep_conv:0/0.17
+dev-ml/ppx_tydi:0/0.17
+dev-ml/capitalization:0/0.17
+dev-ml/ppx_string_conv:0/0.17
+dev-ml/ppx_stable_witness:0/0.17
+dev-ml/ppx_pipebang:0/0.17
+dev-ml/ppx_optional:0/0.17
+dev-ml/ppx_module_timer:0/0.17
+dev-ml/ppx_disable_unused_warnings:0/0.17
+dev-ml/ppx_custom_printf:0/0.17
+dev-ml/bin_prot:0/0.17
+dev-ml/ppx_bin_prot:0/0.17
+dev-ml/ppx_jane:0/0.17
+dev-ml/gel:0/0.17
+dev-ml/ppx_diff:0/0.17
+dev-ml/int_repr:0/0.17
+dev-ml/base_bigstring:0/0.17
+dev-ml/core:0/0.17
+dev-ml/uopt:0/0.17
+dev-ml/core_kernel:0/0.17
+dev-ml/timezone:0/0.17
+dev-ml/sexp_pretty:0/0.17
+dev-ml/expect_test_helpers_core:0/0.17
+dev-ml/core_unix:0/0.17
+dev-ml/async_kernel:0/0.17
+dev-ml/async_unix:0/0.17
+dev-ml/protocol_version_header:0/0.17
+dev-ml/async_rpc_kernel:0/0.17
+dev-ml/async_log:0/0.17
+dev-ml/textutils:0/0.17
+dev-ml/async:0/0.17
+>=dev-ml/labltk-8.06.14
+dev-ml/patience_diff:0/0.17
+>=dev-ml/ppx_deriving-6.0.2
+dev-ml/ppx_js_style:0/0.17
+>=dev-ml/camlp4-5
+dev-ml/textutils_kernel:0/0.17
+
+# Sam James <sam@gentoo.org> (2024-03-28)
+# Newer 5.4.x releases were signed by a potentially compromised upstream maintainer.
+# There is no evidence that these releases contain malicious code, but masked
+# out of an abundance of caution. See bug #928134.
+sec-keys/openpgp-keys-jiatan
+~app-arch/xz-utils-5.4.3
+~app-arch/xz-utils-5.4.4
+~app-arch/xz-utils-5.4.5
+~app-arch/xz-utils-5.4.6
+
+# Sam James <sam@gentoo.org> (2024-03-28)
+# Backdoor discovered in release tarballs. DOWNGRADE NOW.
+# https://www.openwall.com/lists/oss-security/2024/03/29/4
+# https://bugs.gentoo.org/928134
+~app-arch/xz-utils-5.5.1_alpha
+~app-arch/xz-utils-5.5.2_beta
+~app-arch/xz-utils-5.6.0
+~app-arch/xz-utils-5.6.1
+
+# Eray Aslan <eras@gentoo.org> (2024-03-10)
+# Mask experimental software
+=mail-mta/postfix-3.10*
+
+# Sam James <sam@gentoo.org> (2023-12-14)
+# Gentoo's kernel maintainers have decided to discontinue gentoo-sources and
+# gentoo-kernel for old kernel LTS branches because of the resources to require
+# testing and patching them, combined with changing kernel lifecycles.
+#
+# The new policy is to support kernels with genpatches for 3 years after their
+# release.
+#
+# Specifically, 4.14/4.19/5.4 have been dropped. See https://www.mpagano.com/blog/?p=315
+# and http://www.kroah.com/log/blog/2018/08/24/what-stable-kernel-should-i-use/.
+#
+# sys-kernel/vanilla-sources will continue to be provided for all branches
+# until they reach formal upstream EOL.
+#
+<sys-kernel/gentoo-sources-5.10
+<sys-kernel/gentoo-kernel-5.10
+<virtual/dist-kernel-5.10
+
+# Sam James <sam@gentoo.org> (2023-09-09)
+# OpenSSL 1.1.x is EOL on 2023-09-11. Please upgrade immediately to >= OpenSSL 3.
+# https://www.openssl.org/blog/blog/2023/03/28/1.1.1-EOL/
+# https://www.openssl.org/blog/blog/2023/06/15/1.1.1-EOL-Reminder/
+# Please run a full world upgrade, especially checking /etc/portage and your world file
+# for old PHP or Ruby references.
+<dev-libs/openssl-3
+
+# Andreas K. Hüttel <dilfridge@gentoo.org> (2023-07-12)
+# The catalyst-3 branch is outdated and not used by Gentoo
+# Release Engineering anymore. Please either use git master
+# (9999) as all Release Engineering build machines or wait
+# for catalyst-4. Questions or bug reports about catalyst-3
+# may or may not lead to useful results.
+<dev-util/catalyst-4
+
+# Michał Górny <mgorny@gentoo.org> (2023-06-21)
+# suitesparseconfig-7.0.0 fails to build with multilib enabled
+# because of dependencies that cannot be satisfied.  All the other
+# packages require it.  Bug #908851.
+=sci-libs/amd-3.0.3
+=sci-libs/btf-2.0.3
+=sci-libs/camd-3.0.3
+=sci-libs/ccolamd-3.0.3
+=sci-libs/cholmod-4.0.3
+=sci-libs/colamd-3.0.3
+=sci-libs/cxsparse-4.0.3
+=sci-libs/klu-2.0.3
+=sci-libs/ldl-3.0.3
+=sci-libs/spqr-3.0.3
+=sci-libs/suitesparseconfig-7.0.0
+=sci-libs/umfpack-6.1.0
+
+# Ionen Wolkens <ionen@gentoo.org> (2023-03-30)
+# NVIDIA dropped support for the 390.xx branch in December 2022[1].
+#
+# Users are free to unmask and keep using, but be warned it is very
+# likely to be affected by security issues as NVIDIA does not track
+# nor fix these for this branch anymore.
+#
+# Gentoo will keep it packaged for as long as reasonably possible
+# (albeit masked) but no true support will be given nor patches
+# for newer kernels. It is recommended to use 6.1.x LTS kernels or
+# older (6.1.x will be supported upstream until December 2027).
+#
+# Major issues will lead to removal without further warning, e.g.
+# if no usable kernels left in tree, or if broken with a newer Xorg.
+#
+# >> It is recommended to switch to nouveau[2] drivers (regardless
+#    of its worse performance), or ideally replace the hardware.
+#
+# [1] https://nvidia.custhelp.com/app/answers/detail/a_id/3142
+# [2] https://wiki.gentoo.org/wiki/Nouveau
+x11-drivers/nvidia-drivers:0/390
+
+# Ben Kohler <bkohler@gentoo.org> (2023-01-30)
+# Breaks too many revdeps for now
+=app-text/discount-3*
+
+# Joonas Niilola <juippis@gentoo.org> (2022-04-29)
+# Apparently the "b" in version means "beta". 3.24 is available, we
+# should update to that. #841437
+~sci-physics/bullet-3.22b
+
+# Brian Evans <grknight@gentoo.org> (2022-01-07)
+# The main consumer, phpunit, does not initiate the new timer correctly
+# This is likely to cause issues in tests; Unmask if using for other purposes
+>=dev-php/PHP_Timer-5.0
+
+# Ionen Wolkens <ionen@gentoo.org> (2021-10-09)
+# Vulkan beta driver branch aimed at Vulkan developers for testing
+# new features. Beside vulkan, it is typically behind the main branch
+# and may be buggier or less secure. Only unmask if really wanted.
+x11-drivers/nvidia-drivers:0/vulkan
+
+# Andreas K. Hüttel <dilfridge@gentoo.org> (2021-09-18)
+# dev-build/automake version 1.11 is EOL and is only useful for testing
+# old de-ANSI-fication/ansi2knr/AM_C_PROTOTYPES code. Please uninstall.
+dev-build/automake:1.11
+
+# Michał Górny <mgorny@gentoo.org> (2021-07-06)
+# Upstream changed license to GPL-3+ in order to deliberately cause
+# incompatiblity with revdep licenses.  Mask until the situation
+# is resolved.  Bug #791259.
+>=media-libs/libopenaptx-0.2.1
+
+# Sam James <sam@gentoo.org> (2021-03-30)
+# Seems to break dev-tex/culmus-latex
+# Masking until we can investigate & fix
+# bug #737406
+=media-fonts/culmus-0.133-r1
+
+# Sam James <sam@gentoo.org> (2021-03-03)
+# Doesn't seem to sync clock correctly
+# in some cases.
+# bug #772998
+~net-misc/openntpd-6.8_p1
+
+# Michał Górny <mgorny@gentoo.org> (2020-11-10)
+# This old Kodi version requires vulnerable dev-python/pillow
+# and prevents users from upgrading.  Masked for the time being.
+# Bug #729672.
+media-plugins/kodi-game-libretro-nestopia
+media-plugins/kodi-game-libretro-dosbox
+
+# Andreas Sturmlechner <asturm@gentoo.org> (2018-10-07)
+# Masked for more testing especially of reverse-deps.
+# ogre 1.11/1.12 breakage: bug #834468
+# ogre 2.x breakage: bug #740424
+>=dev-games/ogre-1.11.2
+
+# Andreas K. Hüttel <dilfridge@gentoo.org> (2018-09-11)
+# Mask transition ebuilds that were needed only for <glibc-2.26
+# We will keep them in the tree as long as we have masked
+# <glibc-2.26.
+~net-libs/libnsl-0
+~net-libs/rpcsvc-proto-0
+
+# Nicolas Bock <nicolasbock@gentoo.org> (2017-10-31)
+# There are multiple unresolved upstream issues with >=jabref-bin-4.0 (#636036).
+# If you still would like to use this version, please report any issues to
+# upstream.
+>=app-text/jabref-bin-4.0
+
+# Michał Górny <mgorny@gentoo.org> (2017-05-22)
+# for Maciej S. Szmigiero <mail@maciej.szmigiero.name>
+# Any version above 5.100.138 breaks b43 driver in various ways.
+# Also, b43 wiki page says to use 5.100.138. Bug #541080.
+>=sys-firmware/b43-firmware-6.30.163.46
+
+# Andreas K. Hüttel <dilfridge@gentoo.org> (2017-05-21)
+# (and others, updated later)
+# These old versions of toolchain packages (binutils, gcc, glibc) are no
+# longer officially supported and are not suitable for general use. Using
+# these packages can result in build failures (and possible breakage) for
+# many packages, and may leave your system vulnerable to known security
+# exploits.
+# If you still use one of these old toolchain packages, please upgrade (and
+# switch the compiler / the binutils) ASAP. If you need them for a specific
+# (isolated) use case, feel free to unmask them on your system.
+<sys-libs/glibc-2.38-r10
+<sys-libs/binutils-libs-2.42
+<sys-devel/binutils-2.42
+<sys-devel/binutils-hppa64-2.42
+
+# Michael Orlitzky <mjo@gentoo.org> (2017-01-07)
+# This package has some dangerous quality and security issues, but
+# people may still find it useful. It is masked to prevent accidental
+# use. See bugs 603346 and 604998 for more information.
+app-admin/amazon-ec2-init
+
+# Mike Gilbert <floppym@gentoo.org> (2014-03-04)
+# Dev channel releases are only for people who are developers or want more
+# experimental features and accept a more unstable release.
+www-plugins/chrome-binary-plugins:unstable
+
+# Diego E. Pettenò <flameeyes@gentoo.org> (2009-01-03)
+# These packages are not supposed to be merged directly, instead
+# please use sys-devel/crossdev to install them.
+dev-util/mingw64-runtime
+sys-libs/newlib
+dev-embedded/avr-libc
+sys-devel/nvptx-tools
+sys-devel/clang-crossdev-wrappers

@@ -1,0 +1,14 @@
+BDEPEND=app-arch/unzip
+DEFINED_PHASES=compile install prepare
+DESCRIPTION=Bob Hyatt's strong chess engine
+EAPI=8
+HOMEPAGE=https://web.archive.org/web/20231106192545/http://craftychess.com/
+INHERIT=flag-o-matic toolchain-funcs
+IUSE=no-opts
+KEYWORDS=~amd64 ~arm64 ~loong ~riscv ~x86
+LICENSE=crafty
+RESTRICT=test
+SLOT=0
+SRC_URI=https://web.archive.org/web/20210304102649/http://www.craftychess.com/downloads/source/crafty-24.1.zip mirror://gentoo/85/crafty.doc.ascii
+_eclasses_=flag-o-matic	f14aba975c94ccaa9f357a27e3b17ffe	multilib	b2a329026f2e404e9e371097dda47f96	toolchain-funcs	14648d8795f7779e11e1bc7cf08b7536
+_md5_=1d657738229eb288615bbbba4dc874dc

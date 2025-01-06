@@ -1,0 +1,16 @@
+DEFINED_PHASES=compile configure install
+DEPEND=>=app-accessibility/at-spi2-core-2.46.0 dev-db/sqlite:3 dev-libs/glib:2 >=dev-libs/libstrophe-0.12.3:= media-libs/harfbuzz:= net-misc/curl sys-libs/ncurses:=[unicode(+)] sys-libs/readline:= x11-libs/cairo x11-libs/gdk-pixbuf:2 x11-libs/gtk+:3 x11-libs/pango x11-misc/shared-mime-info gpg? ( app-crypt/gpgme:= ) libnotify? ( x11-libs/libnotify ) omemo? ( dev-libs/libgcrypt:= net-libs/libsignal-protocol-c ) omemo-qrcode? ( media-gfx/qrencode:= ) otr? ( net-libs/libotr ) xscreensaver? ( x11-libs/libXScrnSaver x11-libs/libX11 ) test? ( dev-util/cmocka )
+DESCRIPTION=A console based XMPP client inspired by Irssi
+EAPI=8
+HOMEPAGE=https://profanity-im.github.io
+INHERIT=flag-o-matic
+IUSE=libnotify omemo omemo-qrcode otr gpg test xscreensaver
+KEYWORDS=amd64 ~arm64
+LICENSE=GPL-3
+RDEPEND=>=app-accessibility/at-spi2-core-2.46.0 dev-db/sqlite:3 dev-libs/glib:2 >=dev-libs/libstrophe-0.12.3:= media-libs/harfbuzz:= net-misc/curl sys-libs/ncurses:=[unicode(+)] sys-libs/readline:= x11-libs/cairo x11-libs/gdk-pixbuf:2 x11-libs/gtk+:3 x11-libs/pango x11-misc/shared-mime-info gpg? ( app-crypt/gpgme:= ) libnotify? ( x11-libs/libnotify ) omemo? ( dev-libs/libgcrypt:= net-libs/libsignal-protocol-c ) omemo-qrcode? ( media-gfx/qrencode:= ) otr? ( net-libs/libotr ) xscreensaver? ( x11-libs/libXScrnSaver x11-libs/libX11 )
+REQUIRED_USE=omemo-qrcode? ( omemo )
+RESTRICT=!test? ( test )
+SLOT=0
+SRC_URI=https://github.com/profanity-im/profanity/releases/download/0.14.0/profanity-0.14.0.tar.gz
+_eclasses_=flag-o-matic	f14aba975c94ccaa9f357a27e3b17ffe	multilib	b2a329026f2e404e9e371097dda47f96	toolchain-funcs	14648d8795f7779e11e1bc7cf08b7536
+_md5_=6d3633380dcd82a02ef160c06e1f66e2

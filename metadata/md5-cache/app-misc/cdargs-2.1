@@ -1,0 +1,15 @@
+BDEPEND=>=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array
+DEFINED_PHASES=compile configure install postinst postrm test
+DEPEND=sys-libs/ncurses:0= emacs? ( >=app-editors/emacs-23.1:* )
+DESCRIPTION=Bookmarks and browser for the shell builtin cd command
+EAPI=8
+HOMEPAGE=https://www.skamphausen.de/cgi-bin/ska/CDargs https://github.com/cbxbiker61/cdargs
+INHERIT=meson elisp-common
+IUSE=emacs
+KEYWORDS=amd64 ppc ~sparc x86
+LICENSE=GPL-2+
+RDEPEND=sys-libs/ncurses:0= emacs? ( >=app-editors/emacs-23.1:* )
+SLOT=0
+SRC_URI=https://github.com/cbxbiker61/cdargs/archive/refs/tags/2.1.tar.gz -> cdargs-2.1.tar.gz
+_eclasses_=elisp-common	4ee3453b022aae73f4d827a0f98920c2	flag-o-matic	f14aba975c94ccaa9f357a27e3b17ffe	meson	99466844dd8d4fcfb07578a76f5a9922	multilib	b2a329026f2e404e9e371097dda47f96	multiprocessing	1e32df7deee68372153dca65f4a7c21f	ninja-utils	2df4e452cea39a9ec8fb543ce059f8d6	python-utils-r1	42c5abe4a656a4993a06a4fc61dbdd12	toolchain-funcs	14648d8795f7779e11e1bc7cf08b7536
+_md5_=2c965afb6d05bb4d776e584ddfdcc79f

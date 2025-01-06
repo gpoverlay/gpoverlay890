@@ -1,0 +1,15 @@
+BDEPEND=virtual/pkgconfig virtual/pkgconfig
+DEFINED_PHASES=install postinst postrm setup
+DEPEND=dev-libs/hidapi dev-libs/json-c:=
+DESCRIPTION=Yubico Universal 2nd Factor (U2F) Host C Library
+EAPI=8
+HOMEPAGE=https://developers.yubico.com/libu2f-host/
+INHERIT=linux-info udev
+IUSE=systemd
+KEYWORDS=amd64 ~arm64 ~ppc64 x86
+LICENSE=LGPL-2
+RDEPEND=dev-libs/hidapi dev-libs/json-c:= !systemd? ( acct-group/plugdev ) systemd? ( sys-apps/systemd[acl] )
+SLOT=0
+SRC_URI=https://developers.yubico.com/libu2f-host/Releases/libu2f-host-1.1.10.tar.xz
+_eclasses_=linux-info	ea4122ba1d8791a12b78e53f9510a2e3	multilib	b2a329026f2e404e9e371097dda47f96	toolchain-funcs	14648d8795f7779e11e1bc7cf08b7536	udev	f3d9a4376ebd22131726a68e1a0a058f
+_md5_=6e7ba2aafc29c3c06425782f56335ece

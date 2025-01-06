@@ -1,0 +1,14 @@
+DEFINED_PHASES=compile install setup
+DEPEND=pam? ( sys-libs/pam ) !pam? ( virtual/libcrypt:= )
+DESCRIPTION=A Unix Web Authenticator
+EAPI=7
+HOMEPAGE=https://github.com/phokz/pwauth/tree/master/pwauth
+INHERIT=flag-o-matic pam toolchain-funcs
+IUSE=faillog pam ignore-case domain-aware
+KEYWORDS=~amd64 ~ppc ~x86
+LICENSE=Apache-1.1
+RDEPEND=pam? ( sys-libs/pam ) !pam? ( virtual/libcrypt:= )
+SLOT=0
+SRC_URI=https://pwauth.googlecode.com/files/pwauth-2.3.10.tar.gz
+_eclasses_=flag-o-matic	f14aba975c94ccaa9f357a27e3b17ffe	multilib	b2a329026f2e404e9e371097dda47f96	pam	b56d0c9c20fc5b553f13c8ae165a10a5	toolchain-funcs	14648d8795f7779e11e1bc7cf08b7536
+_md5_=03929c56262787b024ebc7514e82d620

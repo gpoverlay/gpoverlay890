@@ -1,0 +1,12 @@
+BDEPEND=app-arch/unzip
+DEFINED_PHASES=compile install
+DESCRIPTION=Z80 macro cross-assembler
+EAPI=7
+HOMEPAGE=https://www.tim-mann.org/trs80resources.html
+INHERIT=toolchain-funcs
+KEYWORDS=amd64 x86
+LICENSE=public-domain
+SLOT=0
+SRC_URI=https://www.tim-mann.org/trs80/zmac13.zip
+_eclasses_=multilib	b2a329026f2e404e9e371097dda47f96	toolchain-funcs	14648d8795f7779e11e1bc7cf08b7536
+_md5_=14ef42bd4e387d7e7cb6dc6a5a0e69fc

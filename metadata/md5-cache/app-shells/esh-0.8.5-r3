@@ -1,0 +1,15 @@
+BDEPEND=virtual/pkgconfig
+DEFINED_PHASES=compile install prepare
+DEPEND=>=sys-libs/readline-4.1:=
+DESCRIPTION=A UNIX Shell with a simplified Scheme syntax
+EAPI=8
+HOMEPAGE=http://slon.ttk.ru/esh/
+INHERIT=flag-o-matic toolchain-funcs
+IUSE=debug
+KEYWORDS=amd64 ppc x86
+LICENSE=GPL-2
+RDEPEND=>=sys-libs/readline-4.1:=
+SLOT=0
+SRC_URI=http://slon.ttk.ru/esh/esh-0.8.5.tar.gz
+_eclasses_=flag-o-matic	f14aba975c94ccaa9f357a27e3b17ffe	multilib	b2a329026f2e404e9e371097dda47f96	toolchain-funcs	14648d8795f7779e11e1bc7cf08b7536
+_md5_=0238b6e6e4f6da17c732f05e05780afd

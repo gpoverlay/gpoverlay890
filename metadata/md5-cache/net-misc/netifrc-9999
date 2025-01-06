@@ -1,0 +1,13 @@
+BDEPEND=kernel_linux? ( virtual/pkgconfig ) virtual/pkgconfig virtual/pkgconfig >=dev-vcs/git-1.8.2.1[curl]
+DEFINED_PHASES=compile install postinst postrm prepare unpack
+DESCRIPTION=Gentoo Network Interface Management Scripts
+EAPI=8
+HOMEPAGE=https://wiki.gentoo.org/wiki/Project:Netifrc
+INHERIT=systemd udev git-r3
+IUSE=+dhcp
+LICENSE=BSD-2 GPL-2
+PROPERTIES=live
+RDEPEND=sys-apps/gentoo-functions || ( >=sys-apps/openrc-0.15 sys-apps/openrc-navi ) dhcp? ( || ( net-misc/dhcpcd net-misc/dhcp[client] sys-apps/busybox ) )
+SLOT=0
+_eclasses_=git-r3	875eb471682d3e1f18da124be97dcc81	multilib	b2a329026f2e404e9e371097dda47f96	systemd	54bd206bb5c4efac6ae28b6b006713b0	toolchain-funcs	14648d8795f7779e11e1bc7cf08b7536	udev	f3d9a4376ebd22131726a68e1a0a058f
+_md5_=8760758e689fb5a8221fd08a0888a283

@@ -1,0 +1,14 @@
+BDEPEND=virtual/pkgconfig
+DEFINED_PHASES=install prepare
+DEPEND=media-libs/libsdl[video]
+DESCRIPTION=Fly a hot air balloon and try to blow the other player out of the screen
+EAPI=8
+HOMEPAGE=https://wiki.gentoo.org/wiki/No_homepage
+INHERIT=desktop toolchain-funcs
+KEYWORDS=~amd64 ~x86
+LICENSE=GPL-2+
+RDEPEND=media-libs/libsdl[video]
+SLOT=0
+SRC_URI=mirror://gentoo/balloonchase-0.9.6.tar.bz2 https://dev.gentoo.org/~ionen/distfiles/balloonchase.png
+_eclasses_=desktop	3a72ffe0d8e1dd73af3a1c8c15a59fed	multilib	b2a329026f2e404e9e371097dda47f96	toolchain-funcs	14648d8795f7779e11e1bc7cf08b7536
+_md5_=a904a3e163e97148ebb9c7f15ef54384

@@ -1,0 +1,16 @@
+BDEPEND=virtual/pkgconfig
+DEFINED_PHASES=compile configure install postinst postrm preinst prepare
+DEPEND=sys-libs/ncurses:0= amd64? ( abi_x86_x32? ( >=sys-libs/ncurses-5.9-r3:0=[abi_x86_x32(-)?] ) !abi_x86_x32? ( >=sys-libs/ncurses-5.9-r3:0=[abi_x86_32(-)] ) ) gui? ( x11-libs/libX11 ) gui? ( x11-base/xorg-proto x11-misc/xbitmaps )
+DESCRIPTION=The extensible self-documenting text editor
+EAPI=8
+HOMEPAGE=https://www.gnu.org/software/emacs/
+IDEPEND=app-eselect/eselect-emacs
+INHERIT=toolchain-funcs flag-o-matic multilib
+IUSE=abi_x86_x32 gui
+KEYWORDS=amd64 x86
+LICENSE=GPL-1+ GPL-2+ BSD HPND
+RDEPEND=sys-libs/ncurses:0= amd64? ( abi_x86_x32? ( >=sys-libs/ncurses-5.9-r3:0=[abi_x86_x32(-)?] ) !abi_x86_x32? ( >=sys-libs/ncurses-5.9-r3:0=[abi_x86_32(-)] ) ) gui? ( x11-libs/libX11 ) app-eselect/eselect-emacs
+SLOT=18
+SRC_URI=ftp://ftp.gnu.org/old-gnu/emacs/emacs-18.59.tar.gz https://dev.gentoo.org/~ulm/emacs/emacs-18.59-patches-15.tar.xz
+_eclasses_=flag-o-matic	f14aba975c94ccaa9f357a27e3b17ffe	multilib	b2a329026f2e404e9e371097dda47f96	toolchain-funcs	14648d8795f7779e11e1bc7cf08b7536
+_md5_=be11190f8409db32f16726127ce4c136
