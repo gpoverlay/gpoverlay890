@@ -3,10 +3,13 @@
 
 # New entries go on top.
 
+# Volkmar W. Pogatzki <gentoo@pogatzki.net> (2025-01-09)
+# No suitable versions of dev-libs/protobuf available.
+=dev-java/protobuf-java-4.29.3 system-protoc
+
 # Volkmar W. Pogatzki <gentoo@pogatzki.net> (2025-01-04)
 # No suitable versions of dev-libs/protobuf available.
-# Bug #947534.
->=dev-java/protobuf-java-4.29.1 system-protoc
+=dev-java/protobuf-java-4.29.1 system-protoc
 
 # Andreas Sturmlechner <asturm@gentoo.org> (2025-01-03)
 # Blocking cleanup of kde-apps/kdegraphics-mobipocket:5
@@ -61,6 +64,7 @@ dev-python/qtpy pyside2
 # Joonas Niilola <juippis@gentoo.org> (2024-11-16)
 # Wasm support is (currently) only available on amd64 and arm64.
 www-client/firefox wasm
+www-client/firefox wasm-sandbox
 
 # Matt Jolly <kangie@gentoo.org> (2024-11-11)
 # ICU 76.1 is not compatible with Chromium. Bug #943216.
@@ -474,12 +478,6 @@ sys-libs/ncurses stack-realign
 # Not ready for general use.
 >=www-client/chromium-104 pgo
 
-# Joonas Niilola <juippis@gentoo.org> (2022-05-03)
-# system-python-libs is HIGHLY EXPERIMENTAL according to upstream, and
-# still being worked on in Gentoo.
->=mail-client/thunderbird-100.0 system-python-libs
->=www-client/firefox-100.0 system-python-libs
-
 # Piotr Karbowski <slashbeast@gentoo.org> (2022-04-29)
 # There's a bug with gnutls support leading TLS certificates
 # validation failures on some certificates that are otherwise valid.
@@ -517,7 +515,8 @@ dev-util/rizin test
 # Sam James <sam@gentoo.org> (2021-12-27)
 # Doc building is broken and no new releases in a long time.
 # bug #830013
-sci-libs/flann doc
+# fixed in sci-libs/flann-1.9.2-20221027
+<=sci-libs/flann-1.9.2 doc
 
 # Joonas Niilola <juippis@gentoo.org> (2021-12-20)
 # Broken, upstream issue/PR open since 2021-05 without reply.
